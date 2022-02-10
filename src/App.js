@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import NavbarComponent from "./Components/Navbar";
+import Footer from "./Components/Footer";
+import T from "./Components/Form";
+import { Spinner} from "react-bootstrap";
 function App() {
+  const person = { firstName: "ahmed", lastName: "hachemi" };
+  const spinner = (
+    <Spinner animation="border" role="status">
+      <span className="visually-hidden">Loading...</span>
+    </Spinner>
+  );
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavbarComponent />
+      <T />
+      <Footer />
+      {spinner}
+    </>
   );
 }
 
